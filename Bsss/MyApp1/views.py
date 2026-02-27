@@ -1,23 +1,11 @@
 
 from django.shortcuts import render
-from django.http import HttpResponse 
+from django.http import HttpResponse
 from datetime import datetime
+from .models import teacher
+
 # Create your views here.fffgg
-def index (request):
-    now = datetime.now()
+def index(request):
+   teach = teacher.objects.all()
 
-    return render (
-        request,
-        "MyApp1/index.html",
-        {
-            'content' : "<strong>hello Django</stong> on " + now.strftime("%A, %d %B, %Y and %X")
-            
-        }
-        
-        
-        )
-
-    html_content = "html><head><title>hello Django</title></head><body>"
-    html_content = "<strong>heloo Django!</stong> on " + now.strftime("%A, %d %B, %Y and %X")
-    html_content ="</body></html>"
-    return HttpResponse("hello Django")
+   return render(request, "MyApp1/index.html",{'content': teach})
