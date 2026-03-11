@@ -4,13 +4,13 @@
 <body>
 
     <strong>Teachers!</strong>
-    {% if content %}
+    {% if stuff %}
     <table>
         <tr>
             <th>Name</th>
             <th>Teaching Area</th>
         </tr>
-        {% for teach in content %}
+        {% for teach in stuff %}
         <tr>
             <td>{{teach.Name}}</td>
             <td>{{teach.Area}}</td>
@@ -24,14 +24,14 @@
 
 
     <strong>Course Area!</strong>
-    {% if content %}
+    {% if stuff %}
     <table>
         <tr>
             <th>Courses</th>
             <th>achevment standards</th>
             <th>Teacher</th>
         </tr>
-        {% for CA in content %}
+        {% for CA in stuff %}
         <tr>
             <td>{{CA.Achivement_standment}}</td>
             <td>{{CA.Courses}}</td>

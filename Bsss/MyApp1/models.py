@@ -10,7 +10,7 @@ class teacher (models.Model):
    
 
 class course_Area (models.Model):
-    Achivement_standment = models.CharField(max_length=30)
+    achivement_standment = models.CharField(max_length=30)
     Courses = models.CharField(max_length=30)
     Teacher = models.ManyToManyField(teacher)
 

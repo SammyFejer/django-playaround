@@ -3,6 +3,10 @@ import csv
 from django.core.management import BaseCommand
 from MyApp1.models import teacher
 
+
+
+
+
 class Command(BaseCommand):
     help = ' this is help text'
 
