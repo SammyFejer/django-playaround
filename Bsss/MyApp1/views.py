@@ -10,11 +10,11 @@ def index(request):
    teaching = teacher.objects.all(),
    CAing = course_Area.objects.all(),
 
-   stuff = {
+   '''stuff = {
    'teach' : teaching,
    'CA' : CAing,
-   }
-   return render(request, "MyApp1/index.html", {'content': stuff})
+   }'''
+   return render(request, "MyApp1/index.html", {'content': teaching, 'content2': CAing})
    
 
   
