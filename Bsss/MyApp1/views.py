@@ -7,8 +7,8 @@ from .models import course_Area
 # Create your views here.fffgg
 def index(request):
 
-   teach = teacher.objects.all()
-   CA = course_Area.objects.all()
+   teach = teacher.objects
+   CA = course_Area.objects
 
    '''stuff = {
    'teach' : teaching,

@@ -3,7 +3,7 @@
 
 <body>
 
-    <strong>Teachers!</strong>
+    <strong>Teachers:</strong>
     {% if content %}
     <table>
         <tr>
@@ -23,7 +23,7 @@
     {% endif %}
 
 
-    <strong>Course Area!</strong>
+    <strong>Course Area:</strong>
     {% if content2  %}
     <table>
         <tr>
@@ -31,15 +31,15 @@
             <th>achevment standards</th>
             <th>Teacher</th>
         </tr>
-        {% for CA in content2 %}
+        {% for CA in content2.all %}
         <tr>
-            {% for achivement_standment in CA.achivement_standment.all %}
+            
             <td>{{CA.achivement_standment}}</td>
-            {% endfor %}
+      
             <td>{{CA.Courses.all}}</td>
-            {% for Teacher in CA.Teacher.all %}
+          
             <td>{{CA.Teacher}}</td>
-            {% endfor %}
+            
 
         </tr>
         {% endfor %}
