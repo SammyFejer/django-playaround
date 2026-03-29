@@ -10,8 +10,8 @@
             <th>Name</th>
             <th>Teaching Area</th>
         </tr>
-        {% for teach in content %}
-        <tr>
+        {% for teach in content.teach.all %}
+        <tr> 
             <td>{{teach.Name}}</td>
             <td>{{teach.Area}}</td>
         </tr>
@@ -24,14 +24,14 @@
 
 
     <strong>Course Area!</strong>
-    {% if content2 %}
+    {% if content2  %}
     <table>
         <tr>
             <th>Courses</th>
             <th>achevment standards</th>
             <th>Teacher</th>
         </tr>
-        {% for CA in content2 %}
+        {% for CA in content2.CA.all %}
         <tr>
             <td>{{CA.achivement_standment}}</td>
             <td>{{CA.Courses}}</td>
