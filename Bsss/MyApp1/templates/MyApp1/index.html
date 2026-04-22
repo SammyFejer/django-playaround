@@ -11,7 +11,7 @@
             <th>Teaching Area</th>
         </tr>
         {% for teach in content.teach %}
-        <tr> 
+        <tr>
             <td>{{teach.Name}}</td>
             <td>{{teach.Area}}</td>
         </tr>
@@ -22,7 +22,7 @@
     <strong> NO DATA! </strong>
     {% endif %}
 
-
+    
     <strong>Course Area:</strong>
     {% if content2  %}
     <table>
@@ -31,15 +31,15 @@
             <th>achevment standards</th>
             <th>Teacher</th>
         </tr>
-        {% for CA in content2.all %}
+        {% for CA in content2 %}
         <tr>
-            
+
             <td>{{CA.achivement_standment}}</td>
-      
+
             <td>{{CA.Courses.all}}</td>
-          
+
             <td>{{CA.Teacher}}</td>
-            
+
 
         </tr>
         {% endfor %}
@@ -48,6 +48,6 @@
     <strong> NO DATA! </strong>
     {% endif %}
 
-
+    <p><a href="{% url 'input' %}">Input new Teachers</a></p>
 </body>
 </html>
