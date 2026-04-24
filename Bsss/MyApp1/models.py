@@ -9,10 +9,10 @@ class teacher (models.Model):
 
    
 
-class course_Area (models.Model):
-    #achivement_standment = models.CharField(max_length=30)
-    #Courses = models.CharField(max_length=30)
-    Teacher = models.ManyToManyField(teacher)
+#class course_Area (models.Model):
+#    #achivement_standment = models.CharField(max_length=30)
+#    #Courses = models.CharField(max_length=30)
+#    Teacher = models.ManyToManyField(teacher)
 
 #class cousres (models.Model):
     #Course_Area = models.ForeignKey(course_Area, on_delete=models.CASCADE)

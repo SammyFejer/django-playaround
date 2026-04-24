@@ -1,7 +1,7 @@
 
 from django.shortcuts import render, redirect
 from .models import teacher 
-from .models import course_Area
+#from .models import course_Area
 from .forms import InputForm
 
 
@@ -9,13 +9,9 @@ from .forms import InputForm
 def index(request):
 
    teach = teacher.objects.all()
-   CA = course_Area.objects
+   #CA = course_Area.objects.all()
 
-   '''stuff = {
-   'teach' : teaching,
-   'CA' : CAing,
-   }'''
-   return render(request, "MyApp1/index.html", {'content': teach, 'content2': CA})
+   return render(request, "MyApp1/index.html", {'content': teach})
    
 def input_view(request):
 

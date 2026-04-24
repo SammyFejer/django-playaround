@@ -8,7 +8,7 @@
     <table>
         <tr>
             <th>Name</th>
-            <th>Teaching Area</th>
+            <th>Area</th>
         </tr>
         {% for teach in content.teach %}
         <tr>
@@ -22,7 +22,7 @@
     <strong> NO DATA! </strong>
     {% endif %}
 
-    
+    <!--->
     <strong>Course Area:</strong>
     {% if content2  %}
     <table>
@@ -46,7 +46,7 @@
     </table>
     {% else %}
     <strong> NO DATA! </strong>
-    {% endif %}
+    {% endif %}<!--->
 
     <p><a href="{% url 'input' %}">Input new Teachers</a></p>
 </body>
