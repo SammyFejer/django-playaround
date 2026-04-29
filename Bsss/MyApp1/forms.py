@@ -10,4 +10,7 @@ class InputForm(forms.ModelForm):
 
         model = teacher
 
-        fields = ['Name', 'Area']
+        fields = ['Name', 'Course']
+        widgets = {
+            'Course': forms.CheckboxSelectMultiple,
+        }
