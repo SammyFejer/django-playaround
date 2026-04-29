@@ -5,4 +5,4 @@ from .models import CourseArea
 # Register your models here.
 admin.site.register(teacher)
 admin.site.register(CourseArea)
-#kjlfdskld
+#kjlfdskldff
