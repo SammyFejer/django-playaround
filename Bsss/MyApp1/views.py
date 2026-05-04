@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.shortcuts import render, redirect
 from .models import teacher 
-from .models import course_Area
+from .models import CourseArea
 from .forms import InputForm
 from pypdf import PdfWriter, PdfReader
 from reportlab.pdfgen import canvas
@@ -14,15 +14,13 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 from io import BytesIO  
 
 # Create your views here.fffgg
+
+# Create your views here.fffgg
 def index(request):
 
    teach = teacher.objects.all()
-   CA = course_Area.objects
+   CA = CourseArea.objects.all()
 
-   '''stuff = {
-   'teach' : teaching,
-   'CA' : CAing,
-   }'''
    return render(request, "MyApp1/index.html", {'content': teach, 'content2': CA})
    
 def input_view(request):
@@ -46,7 +44,6 @@ def input_view(request):
 
 
     return render(request, "MyApp1/input.html", {"form": form})
-
 
 def report(request):
     pdf_file = staticfiles_storage.path("unitplanner.pdf")

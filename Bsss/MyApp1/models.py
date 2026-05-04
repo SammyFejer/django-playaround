@@ -2,20 +2,21 @@ from django.db import models
 
 # Create your models here.
 
-class teacher (models.Model):
-    Name = models.CharField(max_length=25)
-    Area = models.CharField(max_length=30)
     
 
    
 
-class course_Area (models.Model):
-    #achivement_standment = models.CharField(max_length=30)
-    #Courses = models.CharField(max_length=30)
-    Teacher = models.ManyToManyField(teacher)
+class CourseArea(models.Model):
+   Title = models.CharField(max_length=25)
+   def __str__(self):
+        return self.Title
 
-#class cousres (models.Model):
-    #Course_Area = models.ForeignKey(course_Area, on_delete=models.CASCADE)
-    #courseID = models.IntegerField()
 
+class teacher(models.Model):
+    Name = models.CharField(max_length=25)
+    Course = models.ManyToManyField(CourseArea)
+    def __str__(self):
+        return self.Name
+
+    
 

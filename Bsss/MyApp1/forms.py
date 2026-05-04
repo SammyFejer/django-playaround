@@ -1,4 +1,5 @@
 from django import forms
+from django.db.models import QuerySet
 
 from .models import teacher
 
@@ -10,4 +11,8 @@ class InputForm(forms.ModelForm):
 
         model = teacher
 
-        fields = ['Name', 'Area']
+        fields = ['Name', 'Course']
+        widgets = {
+            'Course': forms.CheckboxSelectMultiple,
+            
+        }

@@ -1,28 +1,44 @@
 <html>
-<head><title>  </title></head>
+<head>
+    <title>  </title>
+</head>
 
 <body>
-
     <strong>Teachers:</strong>
+
     {% if content %}
+
     <table>
+
         <tr>
+
             <th>Name</th>
+
             <th>Teaching Area</th>
+
         </tr>
-        {% for teach in content.teach %}
+
+        {% for teach in content %}
+
         <tr>
+
             <td>{{teach.Name}}</td>
-            <td>{{teach.Area}}</td>
+            {% for Course in teach.Course.all %}
+            <td>{{Course.Title}}</td>
+            {% endfor %}
         </tr>
+
         {% endfor %}
 
     </table>
+
     {% else %}
-    <strong> NO DATA! </strong>
+
+    <strong>No data!</strong>
+
     {% endif %}
 
-    
+
     <strong>Course Area:</strong>
     {% if content2  %}
     <table>
@@ -34,11 +50,7 @@
         {% for CA in content2 %}
         <tr>
 
-            <td>{{CA.achivement_standment}}</td>
-
-            <td>{{CA.Courses.all}}</td>
-
-            <td>{{CA.Teacher}}</td>
+            <td>{{CA.Title}}</td>
 
 
         </tr>
@@ -49,7 +61,6 @@
     {% endif %}
 
     <p><a href="{% url 'input' %}">Input new Teachers</a></p>
-    <p><a href="{% url 'report' %}" >PDF report</a></p>
-    
+
 </body>
 </html>
