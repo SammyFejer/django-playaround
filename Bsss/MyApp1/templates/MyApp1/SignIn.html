@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Sign In Form</title>
+
+</head>
+
+<body>
+
+    <h2> Form</h2>
+
+
+    {% if bonked %}
+    <strong>password is incorrect</strong>
+    {% endif %}
+    <form action="" method="post">
+
+
+
+        {% csrf_token %}
+
+        {{ form }}
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+</body>
+
+</html>

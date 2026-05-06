@@ -5,7 +5,8 @@ from django.shortcuts import redirect
 from django.shortcuts import render, redirect
 from .models import teacher 
 from .models import CourseArea
-from .forms import InputForm
+from .forms import InputForm, Signin
+
 from pypdf import PdfWriter, PdfReader
 from reportlab.pdfgen import canvas
 from reportlab.platypus import Table
@@ -44,6 +45,34 @@ def input_view(request):
 
 
     return render(request, "MyApp1/input.html", {"form": form})
+
+def SignIn_view(request):
+
+    if request.method == "POST":
+        form = Signin(request.POST)
+
+        if form.is_valid():
+            
+            
+                data = form.cleaned_data['entered_email']
+                info = teacher.objects.get(Email = data)
+                print(form.cleaned_data['entered_email'])
+                if str(info.Password) == str(form.cleaned_data['entered_password']):
+                    return redirect("index")
+                # else:
+                #     bonked = True
+                #     return render("MyApp1/SignIn.html",{'bonk': bonked} )
+           
+
+            
+
+    else:
+
+        form = Signin()
+
+    return render(request, "MyApp1/SignIn.html", {"form": form})
+
+
 
 def report(request):
     pdf_file = staticfiles_storage.path("unitplanner.pdf")

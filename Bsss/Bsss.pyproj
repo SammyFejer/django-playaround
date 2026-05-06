@@ -55,6 +55,8 @@
   <ItemGroup>
     <Content Include="MyApp1\templates\MyApp1\index.html" />
     <Content Include="MyApp1\templates\MyApp1\input.html" />
+    <Content Include="MyApp1\templates\MyApp1\SignIn.html" />
+    <Content Include="MyApp1\templates\MyApp1\ClassSelect.html" />
     <Content Include="requirements.txt" />
     <Content Include="static\admin\css\autocomplete.css" />
     <Content Include="static\admin\css\base.css" />

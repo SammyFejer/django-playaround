@@ -16,3 +16,9 @@ class InputForm(forms.ModelForm):
             'Course': forms.CheckboxSelectMultiple,
             
         }
+
+class Signin(forms.Form):
+
+
+    entered_email = forms.EmailField(max_length=25)  
+    entered_password = forms.CharField(max_length=25)
