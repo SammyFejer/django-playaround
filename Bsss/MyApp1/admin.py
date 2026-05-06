@@ -11,7 +11,7 @@ class teacherAdmin(admin.ModelAdmin):
             kwargs["queryset"] = CourseArea.objects.filter()
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
-# Register your models here.
+# Register your models here.d
 admin.site.register(teacher)
 admin.site.register(CourseArea)
 admin.site.register(subCourse)
