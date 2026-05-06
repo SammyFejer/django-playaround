@@ -39,9 +39,9 @@ class Assessment(models.Model):
     AssessmentUnit = models.ForeignKey(Unit, on_delete=models.CASCADE)
 
 def InCourseArea():
-    for course in subCourse
+    for course in subCourse 
     return 
-
+# g
 class teacher(models.Model):
     Name = models.CharField(max_length=25)
     Course = models.ManyToManyField(CourseArea)
