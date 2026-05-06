@@ -45,6 +45,6 @@ class teacher(models.Model):
     Course = models.ManyToManyField(CourseArea)
     Email = models.CharField(max_length=25)
     Password = models.CharField(max_length=25)
-    classes = models.ManyToManyField(Unit, limit_choices_to={'Course__coursearea__course' : 'Course'} )
+    classes = models.ManyToManyField(Unit)
     def __str__(self):
         return self.Name        
