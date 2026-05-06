@@ -5,6 +5,12 @@ from .models import subCourse
 from .models import Unit
 from .models import Assessment
 
+class teacherAdmin(admin.ModelAdmin):
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "author":
+            kwargs["queryset"] = Author.objects.filter(user=request.user)
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
+
 # Register your models here.
 admin.site.register(teacher)
 admin.site.register(CourseArea)

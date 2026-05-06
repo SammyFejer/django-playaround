@@ -38,15 +38,13 @@ class Assessment(models.Model):
     AssessmentTitle = models.CharField(max_length=25)
     AssessmentUnit = models.ForeignKey(Unit, on_delete=models.CASCADE)
 
-def InCourseArea():
-    for course in subCourse 
-    return 
-# g
+
+ 
 class teacher(models.Model):
     Name = models.CharField(max_length=25)
     Course = models.ManyToManyField(CourseArea)
     Email = models.CharField(max_length=25)
     Password = models.CharField(max_length=25)
-    classes = models.ManyToManyField.limit_choices_to(Unit, InCourseArea)
+    classes = models.ManyToManyField(Unit, limit_choices_to={'Course__coursearea__course' : 'Course'} )
     def __str__(self):
         return self.Name        
