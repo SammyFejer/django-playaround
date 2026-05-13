@@ -12,13 +12,21 @@ from .models import Assessment
 #        return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
 class teacherAdmin(admin.ModelAdmin):
-    list_display = ['Name', 'Course', 'classes']
+    list_display = ['Name', 'get_Course', 'get_classes']
     list_filter = ['Course', 'classes']
+
+    def get_Course(self, obj):
+        return ", ".join([corse.Title for corse in obj.Course.all()])
+    get_Course.short_description = 'CourseAreas'
+
+    def get_classes(self, obj):
+        return ", ".join([Class.UnitName for Class in obj.classes.all()])
+    get_Course.short_description = 'classes'
 
     def get_form(self, request, obj=None, **kwargs):
         form = super().get_form(request, obj, **kwargs)
         if request.method == 'GET':
-            Course_id = request.Get.get('Course__id')
+            Course_id = request.GET.get('Course__id')
             if Course_id:
                 form.base_fields["classes"].queryset = Unit.objects.filter(Course_id=Course_id)
             else:
