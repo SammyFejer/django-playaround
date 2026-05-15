@@ -13,7 +13,7 @@ from .forms import teacherAdminForm
 #        return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
 
-# class teacherAdminForm(teacherForm):
+# class teacherAdminForm(teacherForm):yterstrys
 #     class Meta:
 #         model = teacher
 #         fields = '__all__'
