@@ -1,6 +1,8 @@
 
 from django.urls import include, re_path
 import MyApp1.views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 """
@@ -32,5 +34,5 @@ urlpatterns = [
     re_path(r'^home$',MyApp1.views.index, name='home'),
      re_path(r'input', MyApp1.views.input_view, name='input'),
      re_path(r'SignIn', MyApp1.views.SignIn_view, name ='SignIn'),
-     path('report/', MyApp1.views.report, name='report')
-]
+     path('report/', MyApp1.views.report, name='report')]+ static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+

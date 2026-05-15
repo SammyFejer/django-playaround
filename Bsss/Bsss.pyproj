@@ -3,7 +3,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>Bsss</Name>
     <RootNamespace>Bsss</RootNamespace>
-    <InterpreterId>Global|PythonCore|3.14</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
     <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup>
@@ -57,7 +57,7 @@
     <Content Include="MyApp1\templates\MyApp1\input.html" />
     <Content Include="MyApp1\templates\MyApp1\SignIn.html" />
     <Content Include="MyApp1\templates\MyApp1\ClassSelect.html" />
-    <Content Include="MyApp1\templates\MyApp1\year_change_form.html" />
+    <Content Include="MyApp1\templates\MyApp1\teacher_change_form.html" />
     <Content Include="requirements.txt" />
     <Content Include="static\admin\css\autocomplete.css" />
     <Content Include="static\admin\css\base.css" />
@@ -102,7 +102,7 @@
     <Content Include="static\admin\img\sorting-icons.svg" />
     <Content Include="static\admin\img\tooltag-add.svg" />
     <Content Include="static\admin\img\tooltag-arrowright.svg" />
-    <Content Include="static\admin\teacher_admin.js" />
+    <Content Include="static\admin\js\teacher_admin.js" />
     <Content Include="static\admin\js\actions.js" />
     <Content Include="static\admin\js\admin\DateTimeShortcuts.js" />
     <Content Include="static\admin\js\admin\RelatedObjectLookups.js" />
@@ -198,7 +198,9 @@
     <Folder Include="MyApp1\migrations\" />
     <Folder Include="MyApp1\management\" />
     <Folder Include="MyApp1\templates\" />
+    <Folder Include="MyApp1\templates\admin\MyApp1\" />
     <Folder Include="MyApp1\templates\MyApp1\" />
+    <Folder Include="MyApp1\templates\admin\" />
     <Folder Include="static\" />
     <Folder Include="static\admin\" />
     <Folder Include="static\admin\css\" />
