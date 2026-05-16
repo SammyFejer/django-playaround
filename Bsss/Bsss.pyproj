@@ -48,13 +48,16 @@
     <Compile Include="MyApp1\forms.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MyApp1\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MyApp1\tests.py" />
     <Compile Include="MyApp1\views.py" />
     <Compile Include="MyApp1\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MyApp1\templates\MyApp1\index.html" />
-    <Content Include="MyApp1\templates\MyApp1\input.html" />
+    <Content Include="MyApp1\input.html" />
     <Content Include="MyApp1\templates\MyApp1\SignIn.html" />
     <Content Include="MyApp1\templates\MyApp1\ClassSelect.html" />
     <Content Include="MyApp1\templates\MyApp1\teacher_change_form.html" />

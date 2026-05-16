@@ -34,5 +34,6 @@ urlpatterns = [
     re_path(r'^home$',MyApp1.views.index, name='home'),
      re_path(r'input', MyApp1.views.input_view, name='input'),
      re_path(r'SignIn', MyApp1.views.SignIn_view, name ='SignIn'),
-     path('report/', MyApp1.views.report, name='report')]+ static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+     path('report/', MyApp1.views.report, name='report'),
+     path('ClassSelect/<str:thingo>/', MyApp1.views.ClassSelect_view, name='ClassSelect')]+ static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 
