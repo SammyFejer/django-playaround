@@ -6,7 +6,35 @@
     <title></title>
 </head>
 <body>
-   
+    <p> hey</p>
+
+    <text>{{content.Name}}</text>
+
+    
+    <table>
+
+        <tr>
+
+            <th>Name</th>
+
+
+
+        </tr>
+
+        {% for taught in content %}
+
+
+        <tr>
+
+            {% for classes in taught.classes.all %}
+            <td>{{classes.UnitTitle}}</td>
+
+        </tr>
+
+
+        {% endfor %}
+
+        </table>
 
 </body>
 </html>

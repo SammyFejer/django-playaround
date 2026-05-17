@@ -3,7 +3,8 @@
 from tkinter.tix import DirSelectDialog
 from django.shortcuts import render
 from django.shortcuts import redirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect 
+from django.urls import reverse
 from .models import teacher 
 from .models import CourseArea
 from .forms import InputForm, Signin
@@ -64,7 +65,9 @@ def SignIn_view(request):
                 
                 if str(info.Password) == str(form.cleaned_data['entered_password']):
                     teachname = info.id
-                    return redirect("ClassSelect", thingo = teachname)
+                    print(teachname)
+                    sles = reverse("ClassSelect" , kwargs= {"thingo":teachname})
+                    return redirect(sles)
                 # else:
                 #     bonked = True
                 #     return render("MyApp1/SignIn.html",{'bonk': bonked} )
@@ -78,6 +81,10 @@ def SignIn_view(request):
 
     return render(request, "MyApp1/SignIn.html", {"form": form})
 
+def classSectect(request, thingo = '1'):
+    # teachsname = teacher.objects.get(thingo = id)
+    taught = teacher.objects.filter(id = thingo)
+    return render(request, "MyApp1/ClassSelect.html", {'content':taught})
 
 
 def report(request):
