@@ -1,8 +1,10 @@
 
 
+from tkinter.tix import DirSelectDialog
 from django.shortcuts import render
 from django.shortcuts import redirect
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect 
+from django.urls import reverse
 from .models import teacher 
 from .models import CourseArea
 from .forms import InputForm, Signin
@@ -23,6 +25,9 @@ def index(request):
    CA = CourseArea.objects.all()
 
    return render(request, "MyApp1/index.html", {'content': teach, 'content2': CA})
+
+# def ClassSelect(request):
+#     class 
    
 def input_view(request):
 
@@ -57,8 +62,12 @@ def SignIn_view(request):
                 data = form.cleaned_data['entered_email']
                 info = teacher.objects.get(Email = data)
                 print(form.cleaned_data['entered_email'])
+                
                 if str(info.Password) == str(form.cleaned_data['entered_password']):
-                    return redirect("index")
+                    teachname = info.id
+                    print(teachname)
+                    sles = reverse("ClassSelect" , kwargs= {"thingo":teachname})
+                    return redirect(sles)
                 # else:
                 #     bonked = True
                 #     return render("MyApp1/SignIn.html",{'bonk': bonked} )
@@ -72,6 +81,10 @@ def SignIn_view(request):
 
     return render(request, "MyApp1/SignIn.html", {"form": form})
 
+def classSectect(request, thingo = '1'):
+    # teachsname = teacher.objects.get(thingo = id)
+    taught = teacher.objects.filter(id = thingo)
+    return render(request, "MyApp1/ClassSelect.html", {'content':taught})
 
 
 def report(request):
@@ -101,13 +114,19 @@ def generate_pdf():
     p = canvas.Canvas(buffer)
 
     lines = [('name:', 'Teaching Area:')]
-
+    # hourse =[()]
     teachers = teacher.objects.all()
 
     for teach in teachers:
-        lines.append((teach.Name))
-        for Course in teach.Course.all():
-            lines.append((Course.Title))
+        # for Course in teach.Course.all():
+        #               hourse.append(teach.Course)
+
+        course_list  = teacher.objects.filter(id = teach.id).values_list("Course__Title", flat=True)
+        hehe = ", ".join(course_list)
+        lines.append((teach.Name, hehe
+                      ))
+        # for Course in teach.Course:
+        # lines.append((teach.Course.all()))
 
     table = Table(lines)
     table.wrapOn(p, 300, 300)
