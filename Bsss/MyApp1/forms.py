@@ -1,7 +1,7 @@
 from django import forms
 from django.db.models import Model, QuerySet
 
-from .models import teacher
+from .models import teacher, Assessment
 
 
 
@@ -30,3 +30,11 @@ class teacherAdminForm(forms.ModelForm):
 
     class Media:
         js = ('admin/js/teacher_admin.js',)
+
+class Assessmentform(forms.ModelForm):
+
+    class Meta:
+
+        model = Assessment
+
+        fields = ['Date', 'weight', 'AssessmentTitle']

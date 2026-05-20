@@ -3,7 +3,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>Bsss</Name>
     <RootNamespace>Bsss</RootNamespace>
-    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>Global|PythonCore|3.14</InterpreterId>
     <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup>
@@ -57,10 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MyApp1\templates\MyApp1\index.html" />
-    <Content Include="MyApp1\input.html" />
+    <Content Include="MyApp1\templates\MyApp1\input.html" />
     <Content Include="MyApp1\templates\MyApp1\SignIn.html" />
     <Content Include="MyApp1\templates\MyApp1\ClassSelect.html" />
     <Content Include="MyApp1\templates\MyApp1\teacher_change_form.html" />
+    <Content Include="MyApp1\templates\MyApp1\outlineInput.html" />
     <Content Include="requirements.txt" />
     <Content Include="static\admin\css\autocomplete.css" />
     <Content Include="static\admin\css\base.css" />

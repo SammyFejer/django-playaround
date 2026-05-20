@@ -1,6 +1,6 @@
 
 
-from tkinter.tix import DirSelectDialog
+
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.shortcuts import render, redirect 
@@ -138,3 +138,25 @@ def generate_pdf():
     buffer.seek(0)
     return buffer
 
+   
+def input_view(request):
+
+    if request.method == "POST":
+
+        form = InputForm(request.POST)
+
+
+
+        if form.is_valid():
+
+            form.save()
+
+            return redirect("index")
+
+    else:
+
+        form = InputForm()
+
+
+
+    return render(request, "MyApp1/input.html", {"form": form})

@@ -7,32 +7,33 @@
 </head>
 <body>
     <p> hey</p>
+    {% for taught in content %}
+        <text>{{taught.Name}}</text>
+    {% endfor %}
 
-    <text>{{content.Name}}</text>
+        <table>
 
-    
-    <table>
+            <tc>
 
-        <tr>
-
-            <th>Name</th>
-
-
-
-        </tr>
-
-        {% for taught in content %}
+                <th>Name</th>
 
 
-        <tr>
+
+            </tc>
+
+            {% for taught in content %}
 
             {% for classes in taught.classes.all %}
-            <td>{{classes.UnitTitle}}</td>
-
-        </tr>
+            <tr>
 
 
-        {% endfor %}
+                <td>{{classes.UnitName}}</td>
+
+            </tr>
+            {% endfor %}
+
+
+            {% endfor %}
 
         </table>
 
